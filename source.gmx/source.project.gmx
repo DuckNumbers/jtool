@@ -176,6 +176,7 @@
       <script>scripts\fontSetup.gml</script>
       <script>scripts\point_in_rect.gml</script>
       <script>scripts\padStringLeft.gml</script>
+      <script>scripts\windowResize.gml</script>
       <script>scripts\splitDelimString.gml</script>
       <script>scripts\stringIsInt.gml</script>
       <script>scripts\colorFromHsvDelimString.gml</script>
@@ -228,6 +229,7 @@
     <scripts name="player">
       <script>scripts\playerJump.gml</script>
       <script>scripts\playerVJump.gml</script>
+      <script>scripts\TAS_ADcheck.gml</script>
       <script>scripts\playerShoot.gml</script>
       <script>scripts\TASwatercheck.gml</script>
       <script>scripts\TASNudgeCheck.gml</script>

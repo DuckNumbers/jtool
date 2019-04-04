@@ -49,8 +49,10 @@
           <argument>
             <kind>1</kind>
             <string>var choose_player = oPlayer
+var p = 0
+if global.record==2 then p = oRecordPlayer else p = oPlayer
 if instance_exists(oRecordPlayer) {choose_player = oRecordPlayer}
-jumpDurations_EndStep(choose_player)
+jumpDurations_EndStep(choose_player,p)
 </string>
           </argument>
         </arguments>

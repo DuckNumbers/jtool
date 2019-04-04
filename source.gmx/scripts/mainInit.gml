@@ -21,6 +21,7 @@ if global.run_from_editor and not FS_directory_exists(global.editor_project_path
 ex_patch_window_close_capture(true)
 
 // global state
+//window_set_size(800,608)
 global.state = globalstate_idle
 global.comboboxselected = false
 global.count = 0
@@ -42,6 +43,7 @@ global.backup_period = 5*60*50
 alarm[5] = global.backup_period
 global.BackupFailSafe = false
 global.shouldresetloadedmapname = false
+//global.scale = 1
 
 // maybe later load from map
 global.grav = 1
@@ -84,6 +86,7 @@ global.key_pause = vk_escape
 global.record = false; // 0=noone,1=record,2=play
 
 global.recordList = ds_list_create();
+global.recordListString = string('');
 global.recordX = 0;
 global.recordY = 0;
 global.recordGrav = 1;
@@ -97,6 +100,8 @@ global.pausedgrav = 1
 global.pausedplayer_xscale = 1
 global.pausedVspeed = 0
 global.pausedDjump = true
+global.recordApple = 0
+global.tasAD=false
 
 //Record Save State Variables
 global.recordListSS5 = ds_list_create()

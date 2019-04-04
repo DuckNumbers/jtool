@@ -65,7 +65,8 @@ if instance_exists(oRecordPlayer) {
 global.pausedrecordX = oRecordPlayer.x
 global.pausedrecordY = oRecordPlayer.y
 global.pausedrecordSprite = oRecordPlayer.sprite_index
-global.pausedrecordx_scale = oRecordPlayer.xscale 
+global.pausedrecordx_scale = oRecordPlayer.xscale
+global.pausedrecordvspeed = oRecordPlayer.vspeed
 global.recordingpaused = true
 
 global.savecount += 1
@@ -163,7 +164,7 @@ instance_deactivate_object(oPlayerCopy) }
 instance_activate_object(oPlayer)
 /*TASNudgeCheck() 
 adjustPlayerPosition_EndStep()*/
-global.adjustTAS = true
+//global.adjustTAS = true
 }
 //screen_save_part("Screenie.png",0,0,display_get_width(),display_get_height());
 

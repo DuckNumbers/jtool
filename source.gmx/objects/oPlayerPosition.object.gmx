@@ -31,6 +31,7 @@ global.RecordPlayerPosition = false
 xpos = 0
 ypos = 0
 align = 0
+vsp = 0
 </string>
           </argument>
         </arguments>
@@ -63,16 +64,19 @@ if (instance_exists(oRecordPlayer) or instance_exists(oRecordPlayerCopy)) and gl
  if instance_exists(oRecordPlayer) {
  align = oRecordPlayer.x mod 3
     ypos = oRecordPlayer.y
-    xpos = oRecordPlayer.x }
+    xpos = oRecordPlayer.x 
+    vsp = oRecordPlayer.vspeed}
 if instance_exists(oRecordPlayerCopy) {
  align = oRecordPlayerCopy.x mod 3
     ypos = oRecordPlayerCopy.y
-    xpos = oRecordPlayerCopy.x }
+    xpos = oRecordPlayerCopy.x
+    vsp = global.pausedrecordvspeed }
    } 
 else if instance_exists(oPlayer) {
     align = oPlayer.x mod 3
     ypos = oPlayer.y
     xpos = oPlayer.x
+    vsp = oPlayer.vspeed
 }
 
 var yy = y+5
@@ -84,7 +88,9 @@ yy += dy
 draw_text(xx,yy+5,'R X pos   '+string(xpos))
 yy += dy
 var ystr = string(ypos)
-if global.playery_extended ystr = string_format(ypos,3,16)
+if global.playery_extended  = true {ystr = string_format(ypos,3,16)
+if vsp&lt;0 {draw_text(xx+95,yy-15,'Vspeed  '+string_format(vsp,1,7))}
+else draw_text(xx+95,yy-15,'Vspeed   '+string_format(vsp,1,7))} 
 draw_text(xx,yy+5,'R Y pos   '+ystr)
 }
 else {
@@ -93,8 +99,11 @@ yy += dy
 draw_text(xx,yy+5,'X pos   '+string(xpos))
 yy += dy
 var ystr = string(ypos)
-if global.playery_extended ystr = string_format(ypos,3,16)
+if global.playery_extended  = true {ystr = string_format(ypos,3,16)
+if vsp&lt;0 {draw_text(xx+95,yy-15,'Vspeed  '+string_format(vsp,1,7))}
+else draw_text(xx+95,yy-15,'Vspeed   '+string_format(vsp,1,7))} 
 draw_text(xx,yy+5,'Y pos   '+ystr)
+
 }
 
 var buttons_active = global.state == globalstate_idle and not global.comboboxselected

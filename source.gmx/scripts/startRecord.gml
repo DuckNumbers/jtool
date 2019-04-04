@@ -4,6 +4,7 @@ with oRecordPlayer {instance_destroy();}
 //if not instance_exists(oPlayer) {loadPlayer() }
 with oPlayer djump = global.restartWithDJump;
 with oJumpRefresher count = 0
+with oApple image_index = 0
 with oKiller highlight_count = 1000
 with oWarp highlight_count = 1000
 codable_room_restart()

@@ -37,7 +37,7 @@ global.stopX = -1
    global.stopY = 0
    global.stopgrav = 0
    global.stopplayer_xscale = 0
-
+global.resize=0
 Background = sprite_add("Screenie.png", 0, false, true, 0, 0);
 </string>
           </argument>
@@ -332,6 +332,7 @@ var sidebar_spr = sMenuSidebar
 if global.hidesidebar sidebar_spr = sMenuSidebar2
 if menuButtonToggle(xx,yy,w,h,buttons_enabled,sidebar_spr,
 'Show Sidebar','Hide Sidebar',global.hidesidebar) {
+    //global.resize=1  
     global.hidesidebar = not global.hidesidebar
     saveConfig()
 }

@@ -1,8 +1,9 @@
-
+//TAS_ADcheck()
 
 if place_meeting(x,y+global.grav,oBlock)
 or onPlatform
-or place_meeting(x,y+global.grav,oWater) {
+or place_meeting(x,y+global.grav,oWater)
+or global.tasAD = true {
     vspeed = -jump
     djump = true
     audio_play_sound(sndJump,0,0)
@@ -23,4 +24,4 @@ or global.infinitejump {
         djump = true
     }
 }
-
+global.tasAD=false

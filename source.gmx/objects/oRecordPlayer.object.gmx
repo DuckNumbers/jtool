@@ -45,7 +45,7 @@ FD = 0;
 FU = 0;
 FI = 0;
 
-image_alpha = 0.5;
+image_alpha = 1;
 jump = 8.5 * grav
 jump2 = 7 * grav
 maxSpeed = 3

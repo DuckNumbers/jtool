@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.tasAD = false
-jump = 8.5 * global.grav
+            <string>jump = 8.5 * global.grav
 jump2 = 7 * global.grav
 maxSpeed = 3
 maxVspeed = 9
@@ -145,43 +144,75 @@ global.frameaction_jumpslow = false
             <kind>1</kind>
             <string>///record add list
 if global.record==1 {
-    //#1
+    //#1 
+   global.recordListString=global.recordListString+string('F')+string(global.PlayerFrameCounter)+string(':')
+    
     ds_list_add(global.recordList,keyboard_check_direct(global.key_right));
+    if keyboard_check_direct(global.key_right) {
+    global.recordListString=global.recordListString+string('R ')};
     
     ds_list_add(global.recordList,keyboard_check_direct(global.key_left));
+    if keyboard_check_direct(global.key_left) {
+    global.recordListString=global.recordListString+string('L ')};
     
-    ds_list_add(global.recordList,keyboard_check_pressed(global.key_right));  
+    ds_list_add(global.recordList,keyboard_check_pressed(global.key_right)); 
+    //ds_list_add(global.recordListString,string(keyboard_check_pressed(global.key_right)));  
      
     ds_list_add(global.recordList,keyboard_check_pressed(global.key_left));
+    //ds_list_add(global.recordListString,string(keyboard_check_pressed(global.key_left)));
     
     ds_list_add(global.recordList,keyboard_check(global.key_jump));
+    if keyboard_check(global.key_jump) {
+    global.recordListString=global.recordListString+string('J ')};
     
     ds_list_add(global.recordList,keyboard_check_pressed(global.key_jump));
+    if keyboard_check_pressed(global.key_jump) {
+    global.recordListString=global.recordListString+string('J ')};
     
     ds_list_add(global.recordList,keyboard_check_released(global.key_jump));
+    if keyboard_check_released(global.key_jump) {
+    global.recordListString=global.recordListString+string('Shr ')};
     
     //#2
     ds_list_add(global.recordList,keyboard_check(ord("J")));
+    if keyboard_check(ord("J")) {
+    global.recordListString=global.recordListString+string('TJ ')};
     
     ds_list_add(global.recordList,keyboard_check(ord("K")));
+    if keyboard_check(ord("K")) {
+    global.recordListString=global.recordListString+string('TR ')};
     
     ds_list_add(global.recordList,keyboard_check(ord("P")));
+    if keyboard_check(ord("P")) {
+   global.recordListString=global.recordListString+string('TVR ')};
     
     ds_list_add(global.recordList,keyboard_check(ord("O")));
+    if keyboard_check(ord("O")) {
+    global.recordListString=global.recordListString+string('TVL ')};
     
     //#3
     ds_list_add(global.recordList,keyboard_check_pressed(ord('A')));
+    if keyboard_check_pressed(ord('A')) {
+    global.recordListString=global.recordListString+string('A ')};
     
     ds_list_add(global.recordList,keyboard_check_pressed(ord('D')));
+    if keyboard_check_pressed(ord('D')) {
+    global.recordListString=global.recordListString+string('D ')};
     
     ds_list_add(global.recordList,keyboard_check(ord("U")));
+    if keyboard_check(ord("U")) {
+    global.recordListString=global.recordListString+string('TA ')};
     
     ds_list_add(global.recordList,keyboard_check(ord("I")));
+    if keyboard_check(ord("I")) {
+    global.recordListString=global.recordListString+string('TD ')};
     
     ds_list_add(global.recordList,keyboard_check_pressed(ord("N")));
+    //ds_list_add(global.recordListString,string(keyboard_check_pressed(ord("N"))));
     
      ds_list_add(global.recordList,keyboard_check_pressed(ord("M")));
-
+     //ds_list_add(global.recordListString,string(keyboard_check_pressed(ord("M"))));
+     
 }
 </string>
           </argument>
@@ -328,11 +359,12 @@ if not frozen {
         and not keyboard_check(vk_control) playerShoot()
     if keyboard_check_pressed(global.key_jump) playerJump()
     if keyboard_check_released(global.key_jump) playerVJump()
-    if keyboard_check(ord("J")) {global.tasAD = true;playerJump()}
+    if keyboard_check(ord("J")) {/*global.tasAD = true;*/playerJump()}
     if keyboard_check(ord("K")) playerVJump()
     if keyboard_check_pressed(global.key_suicide) killPlayer()
 }
-if global.adjustTAS {adjustPlayerPosition_EndStep()}
+//if global.adjustTAS {adjustPlayerPosition_EndStep()}
+//adjustPlayerPosition_EndStep()
 </string>
           </argument>
         </arguments>

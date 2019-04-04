@@ -1,9 +1,10 @@
 // Calculate if bunny hops were timed early, late, or perfectly.
-
-bhcount += 1
+argument0=0
+if instance_exists(argument1) {
+bhcount += 1}
 
 var player_on_ground = false
-with argument0 {
+with argument1 {
     player_on_ground = (place_meeting(x,y+global.grav,oBlock)
     and place_meeting(x,y+global.grav,oBlock))
 }
@@ -14,10 +15,10 @@ if global.frameaction_jump {
 
 // press jump before hitting ground
 // simulate player to find out how many frames it would have taken to hit the ground
-if keyboard_check_pressed(vk_shift) and not global.frameaction_jump and instance_exists(argument0) {
-    var realplayer = argument0
+if keyboard_check_pressed(vk_shift) and not global.frameaction_jump and instance_exists(argument1) {
+    var realplayer = argument1
     var playersim
-    with argument0 playersim = instance_copy(true)
+    with argument1 playersim = instance_copy(true)
     playersim.y = realplayer.yprevious
     playersim.vspeed = bhop_vspeedprevious
     
@@ -57,4 +58,4 @@ if not player_on_ground {
     bhop_waitinglate = false
 }
 
-if instance_exists(argument0) bhop_vspeedprevious = argument0.vspeed
+if instance_exists(argument1) bhop_vspeedprevious = argument1.vspeed

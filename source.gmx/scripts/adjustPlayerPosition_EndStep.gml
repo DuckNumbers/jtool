@@ -14,21 +14,38 @@ with oPlayer {
         isOnBlock = place_meeting(x,y+global.grav,oBlock);
     }
     if isOnBlock and not frozen {
-        if keyboard_check_pressed(ord('A')) || keyboard_check(ord("U")) and not place_meeting(x-1,y,oBlock) {
-            
+        if keyboard_check_pressed(ord('A')) || keyboard_check(ord("U")) 
+        and not place_meeting(x-1,y,oBlock)  {
+            if (keyboard_check_pressed(global.key_jump) or keyboard_check(ord("J")))
+             and  (keyboard_check_pressed(vk_f1)) and not keyboard_check(vk_enter)
+             and not place_meeting(x+1,y+global.grav,oBlock)
+              {
+              global.tasAD = true}
             x -= 1
+            
         }
-        if keyboard_check_pressed(ord('D')) || keyboard_check(ord("I")) and not place_meeting(x+1,y,oBlock) {
-           /*if global.tasAD = true {
-            oPlayer.vspeed = -jump; 
-            oPlayer.djump = true}*/
-             x += 1
+        if keyboard_check_pressed(ord('D')) || keyboard_check(ord("I")) 
+        and not place_meeting(x+1,y,oBlock)  {            
+            if (keyboard_check_pressed(global.key_jump) or keyboard_check(ord("J")))
+             and  (keyboard_check_pressed(vk_f1)) and not keyboard_check(vk_enter)
+             and not place_meeting(x+1,y+global.grav,oBlock)
+              {
+              global.tasAD = true}
+              x += 1
+              
+             
         }
-        if keyboard_check_pressed(ord('N')) and not place_meeting(x-1,y,oBlock) {
+        if keyboard_check_pressed(ord('N')) 
+        and not place_meeting(x-.5,y,oBlock)  {
+            
             x -= .5
+           
         }
-         if keyboard_check_pressed(ord('M')) and not place_meeting(x+1,y,oBlock) {
+         if keyboard_check_pressed(ord('M')) 
+         and not place_meeting(x+.5,y,oBlock) {
+            
             x += .5
+            
          }
     }
 }
@@ -69,5 +86,5 @@ if keyboard_check_pressed(ord('H')) and instance_exists(oPlayer) {
         oInputOverlay.textbox_label = '0.'
     }
 }
-global.tasAD = false
-global.adjustTAS = false
+
+//global.adjustTAS = false

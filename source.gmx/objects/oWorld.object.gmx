@@ -215,9 +215,10 @@ if global.paused = false and keyboard_check_pressed(global.key_restart) {
         global.recordX = oPlayer.x;
         global.recordY = oPlayer.y;
         global.recordGrav = global.grav;
-        global.recordXscale = global.player_xscale;
+        global.recordXscale = global.player_xscale;        
         eraserRecord()
     }
+    if global.record!=2 {global.PlayerFrameCounter = 0}
     with oPlayer djump = global.restartWithDJump;
     with oJumpRefresher count = 0
     with oKiller highlight_count = 1000
@@ -231,12 +232,14 @@ if keyboard_check_direct(vk_alt) and keyboard_check_pressed(vk_f4) {
 if not global.adjustTAS{
 adjustPlayerPosition_EndStep()}
 
+
 // crash the game, for backup testing purposes
 /*if keyboard_check_pressed(ord('C')) {
     a = 0
     a += 'a'
 }*/
-
+/*if mouse_wheel_up() and keyboard_check(vk_shift) then windowResize('up')
+if mouse_wheel_down() and keyboard_check(vk_shift) then windowResize('down')*/
 global.count += 1
 
 </string>

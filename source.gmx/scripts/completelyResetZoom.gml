@@ -6,8 +6,8 @@ with oZoom {
     has_previous = false
     x1_target=0
     y1_target=0
-    x2_target=1056
-    y2_target=608
+    x2_target=window_get_width()
+    y2_target=window_get_height()
     zoom = 1
     x1_previous=x1_target
     y1_previous=y1_target

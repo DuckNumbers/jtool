@@ -46,6 +46,13 @@ global.continuedjump = real(file_text_read_string(f))
 file_text_readln(f)
 
 global.PlayerFrameCounter = real(file_text_read_string(f))
+file_text_readln(f)
+
+with oApple image_index = real(file_text_read_string(f))
+file_text_readln(f)
+file_text_readln(f)
+
+global.recordListString = file_text_read_string(f)
 
 file_text_close(f)
 

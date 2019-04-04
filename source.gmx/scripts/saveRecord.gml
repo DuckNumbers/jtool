@@ -45,6 +45,15 @@ file_text_write_string(f,string(global.stopDjump))
 file_text_writeln(f)
 
 file_text_write_string(f,string(global.SavedPlayerFrameCounter))
+file_text_writeln(f)
+
+if instance_exists(oApple) {
+file_text_write_string(f,string(oApple.image_index))}
+else {file_text_write_string(f,string(0))}
+file_text_writeln(f)
+file_text_writeln(f)
+
+file_text_write_string(f,string(global.recordListString));
 }
 
 else{ 
@@ -67,6 +76,16 @@ file_text_write_string(f,string(global.pausedDjump))
 file_text_writeln(f)
 
 file_text_write_string(f,string(global.SavedPlayerFrameCounter))
+file_text_writeln(f)
+
+if instance_exists(oApple) {
+file_text_write_string(f,string(oApple.image_index))}
+else {file_text_write_string(f,string(0))}
+file_text_writeln(f)
+file_text_writeln(f)
+
+file_text_write_string(f,string(global.recordListString));
+
 }
 
 
@@ -79,4 +98,5 @@ global.stopgrav = 0
 global.stopplayer_xscale = 0
 global.stopVspeed = 0
 global.stopDjump = true
+global.recordListString=''
 
