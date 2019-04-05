@@ -51,9 +51,10 @@ codable_create()
           <argument>
             <kind>1</kind>
             <string>event_inherited()
-if global.paused=false and global.recordingpaused=false and global.record != 2{
+/*if global.paused=false and global.recordingpaused=false and global.record != 2{
  image_index = floor(global.count/15) mod 2}
-if global.record==2 {image_index = floor(global.PlayerFrameCounter/15) mod 2}
+if global.record==2 {image_index = floor(global.PlayerFrameCounter/15) mod 2}*/
+image_index = floor(global.PlayerFrameCounter/15) mod 2
 codable_step()
 </string>
           </argument>

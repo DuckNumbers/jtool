@@ -18,7 +18,7 @@ with oPlayer {
         and not place_meeting(x-1,y,oBlock)  {
             if (keyboard_check_pressed(global.key_jump) or keyboard_check(ord("J")))
              and  (keyboard_check_pressed(vk_f1)) and not keyboard_check(vk_enter)
-             and not place_meeting(x+1,y+global.grav,oBlock)
+             and not place_meeting(x-1,y+global.grav,oBlock)
               {
               global.tasAD = true}
             x -= 1
